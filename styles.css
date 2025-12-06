@@ -180,7 +180,7 @@ h6 {
 }
 
 .active.nav a {
-  color: var(--blue);
+  color: var(--white);
 }
 
 .nav a::after {
@@ -251,7 +251,7 @@ h6 {
 }
 
 .menu-icon.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(0px, 3px);
 }
 
 .menu-icon.active span:nth-child(2) {
@@ -259,17 +259,20 @@ h6 {
 }
 
 .menu-icon.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(4px, -7px);
 }
 
 @media (max-width: 1048px) {
   .nav {
-    position: fixed;
+    position: absolute;
     top: 65px;
     right: -100%;
-    width: 250px;
-    height: calc(100% - 65px);
-    background-color: var(--white);
+    width: 100%;
+    border-radius: 30px;
+    height: max-content;
+    margin-top: 20px;
+    padding: 60px 30px;
+    background-color: var(--blue);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -284,10 +287,15 @@ h6 {
   .nav ul {
     flex-direction: column;
     gap: 25px;
+    align-items: center;
   }
 
   .call-btn {
     display: none;
+  }
+  .nav ul li a {
+    color: var(--white);
+    font-size: 1.1rem;
   }
 
   .menu-icon {
@@ -295,7 +303,6 @@ h6 {
   }
 }
 
-/* Hero секція */
 .hero {
   padding: 50px 20px 80px;
   display: flex;
@@ -930,7 +937,8 @@ h6 {
 @media (max-width: 768px) {
   .carousel-item {
     flex: 0 0 100%;
-    height: auto;
+    height: 600px;
+    object-fit: contain;
   }
 }
 .arrow-btn {
