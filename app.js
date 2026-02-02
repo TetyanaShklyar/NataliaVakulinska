@@ -25,7 +25,7 @@ const observer2 = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0.2 },
 );
 
 serviceCards.forEach((card) => observer2.observe(card));
@@ -66,5 +66,26 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 
   btn.addEventListener("click", () => {
     item.classList.toggle("active");
+  });
+});
+
+const priceItems = document.querySelectorAll(".price-item");
+
+priceItems.forEach((item) => {
+  const head = item.querySelector(".price-head");
+  const icon = item.querySelector(".price-icon");
+
+  head.addEventListener("click", () => {
+    const isOpen = item.classList.contains("active");
+
+    priceItems.forEach((el) => {
+      el.classList.remove("active");
+      el.querySelector(".price-icon").textContent = "+";
+    });
+
+    if (!isOpen) {
+      item.classList.add("active");
+      icon.textContent = "✕";
+    }
   });
 });

@@ -432,7 +432,9 @@ h6 {
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   font-weight: 500;
   text-transform: uppercase;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .btn i {
@@ -463,7 +465,9 @@ h6 {
   color: var(--white);
   font-family: var(--font-bold);
   font-size: 1.2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .experience-circles .circle:hover {
@@ -552,6 +556,8 @@ h6 {
 
 .title.blue {
   color: var(--blue);
+  position: relative;
+  z-index: 100;
 }
 .experience-description p {
   font-size: 1.2rem;
@@ -582,7 +588,9 @@ h6 {
   text-align: left;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
   cursor: default;
   border: 2px solid var(--beige);
 }
@@ -931,7 +939,9 @@ h6 {
   flex: 0 0 calc(20% - 20px);
   border-radius: 20px;
   height: 500px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
 }
 
 @media (max-width: 768px) {
@@ -1109,7 +1119,9 @@ h6 {
   max-height: 0;
   overflow: hidden;
   padding: 0 24px;
-  transition: max-height 0.35s ease, padding 0.3s ease;
+  transition:
+    max-height 0.35s ease,
+    padding 0.3s ease;
 }
 
 .faq-item.active .faq-question {
@@ -1344,5 +1356,145 @@ h6 {
   }
   .faq .logo {
     font-size: 1.3rem;
+  }
+}
+
+.prices {
+  padding: 100px 20px;
+  background-image: url("images/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.prices::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.prices::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.price-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.price-item {
+  overflow: hidden;
+  border: 1px solid var(--beige);
+  border-radius: 14px;
+}
+
+.price-head {
+  background: var(--blue);
+
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 20px;
+  font-family: "HelveticaNeueRoman";
+  border: none;
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(187, 162, 144, 0.35);
+}
+
+.price-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.price-item.active .price-icon {
+  transform: rotate(90deg);
+}
+
+.price-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background: var(--white);
+}
+
+.price-item.active .price-body {
+  max-height: 2000px;
+}
+
+.price-body table {
+  width: 100%;
+}
+
+.price-body td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.price-body td:last-child {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.price-body tr:last-child td {
+  border-bottom: 0;
+}
+
+.price-body span {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .price-head {
+    font-size: 16px;
+    padding: 16px 18px;
+  }
+  .prices {
+    padding: 0 15px 50px;
+  }
+  .price-body td {
+    display: block;
+    text-align: left;
+  }
+
+  .price-body td:last-child {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  #services {
+    padding-bottom: 50px;
+  }
+
+  .price-body td:first-child {
+    border-bottom: 0;
+    padding-bottom: 0;
   }
 }
