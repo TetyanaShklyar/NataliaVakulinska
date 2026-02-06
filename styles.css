@@ -313,6 +313,7 @@ h6 {
   background-image: url(images/header.jpg);
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: bottom;
 }
 
 .hero::after {
@@ -435,6 +436,7 @@ h6 {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  min-width: 200px;
 }
 
 .btn i {
@@ -725,7 +727,8 @@ h6 {
   }
 }
 
-.service-card.white .btn {
+.service-card.white .btn,
+.btn-blue {
   color: #fff;
   border-color: var(--blue);
   background-color: var(--blue);
@@ -1497,4 +1500,140 @@ h6 {
     border-bottom: 0;
     padding-bottom: 0;
   }
+}
+
+/* ===== PAYMENTS (ЦІНИ) ===== */
+
+.price-payments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 100;
+}
+
+.payment-card {
+  background: var(--white);
+  border-radius: 30px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.payment-card h4 {
+  font-size: 1.6rem;
+  color: var(--blue);
+  margin-bottom: 10px;
+  font-family: var(--font-bold);
+}
+
+.payment-card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.payment-card p span {
+  opacity: 0.7;
+}
+
+.payment-price {
+  font-size: 2.2rem;
+  color: var(--blue);
+  margin-bottom: 25px;
+  font-family: var(--font-bold);
+}
+
+/* кнопки */
+.pay-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.pay-btn.outline {
+  border: 2px solid var(--blue);
+  color: var(--blue);
+}
+
+.pay-btn.filled {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.pay-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hero-pay-links {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-pay-links h3 {
+  font-family: var(--font-bold);
+  font-size: 20px;
+  color: var(--black);
+}
+
+.hero-pay-links .hero-pay-links a {
+  margin: 0 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.row-btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .price-payments {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Custom payment --- */
+.payment-card.custom {
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.custom-amount {
+  margin: 20px 0;
+}
+
+.custom-amount input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  background: transparent;
+  transition: border 0.3s ease;
+}
+
+.custom-amount input:focus {
+  border-color: #9a8f7a;
+}
+
+.payment-card.custom .pay-btn {
+  width: 100%;
 }
